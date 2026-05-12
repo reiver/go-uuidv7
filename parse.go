@@ -1,5 +1,14 @@
 package uuidv7
 
+func MustParse(str string) [16]byte {
+	uuid, err := Parse(str)
+	if nil != err {
+		panic(err)
+	}
+
+	return uuid
+}
+
 func Parse(str string) ([16]byte, error) {
 	var uuid [16]byte
 	err := ParsePut(&uuid, str)
