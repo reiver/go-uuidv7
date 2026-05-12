@@ -1,5 +1,15 @@
 package uuidv7
 
+// MustParse is similar to [Parse] expect it panics if there is an error.
+//
+// Example usage:
+//
+//	uuid := uuidv7.MustParse("ed7ba470-8e54-465e-825c-99712043e01c")
+//
+// See also:
+//
+//	• [Parse]
+//	• [ParsePut]
 func MustParse(str string) [16]byte {
 	uuid, err := Parse(str)
 	if nil != err {
@@ -9,12 +19,33 @@ func MustParse(str string) [16]byte {
 	return uuid
 }
 
+// Parse parses a string for a UUIDv7 and returns a UUIDv7 as a [16]byte if the string contained a valid UUIDv7, else it returns an error.
+//
+// Example usage:
+//
+//	uuid, err := uuidv7.Parse("ed7ba470-8e54-465e-825c-99712043e01c")
+//
+// See also:
+//
+//	• [MustParse]
+//	• [ParsePut]
 func Parse(str string) ([16]byte, error) {
 	var uuid [16]byte
 	err := ParsePut(&uuid, str)
 	return uuid, err
 }
 
+// ParsePut parses a string for a UUIDv7 and puts the UUIDv7 into a [16]byte if the string contained a valid UUIDv7, else it returns an error.
+//
+// Example usage:
+//
+//	var uuid [16]byte
+//	err := uuidv7.ParsePut(&uuid, "ed7ba470-8e54-465e-825c-99712043e01c")
+//
+// See also:
+//
+//	• [MustParse]
+//	• [Parse]
 func ParsePut(uuid *[16]byte, str string) error {
 	err := ValidateString(str)
 	if nil != err {
