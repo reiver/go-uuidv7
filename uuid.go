@@ -93,7 +93,7 @@ const (
 	ErrHyphenMissing   = erorr.Error("hypen missing")
 	ErrLengthWrong     = erorr.Error("length wrong")
 	ErrNotUUID         = erorr.Error("not UUID")
-	ErrNotVersion7UUID = erorr.Error("not version 7 UUD")
+	ErrNotVersion7UUID = erorr.Error("not version 7 UUID")
 )
 
 func ValidateString(str string) error {
