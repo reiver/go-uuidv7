@@ -19,6 +19,28 @@ func Generate() [16]byte {
 	return uuid
 }
 
+// Generate returns a UUIDv7 for the seconds-resolution unix-time as a [16]byte.
+//
+// Example usage:
+//
+//	var uuid [16]byte = uuidv7.GenerateeAtUnixTime(sec)
+func GenerateAtUnixTime(sec int64) [16]byte {
+	var uuid [16]byte
+	GeneratePutAtUnixTime(&uuid, sec)
+	return uuid
+}
+
+// Generate returns a UUIDv7 for the milliseconds-resolution unix-time as a [16]byte.
+//
+// Example usage:
+//
+//	var uuid [16]byte = uuidv7.GenerateeAtUnixTimeMilli(sec)
+func GenerateAtUnixTimeMilli(msec int64) [16]byte {
+	var uuid [16]byte
+	GeneratePutAtUnixTimeMilli(&uuid, msec)
+	return uuid
+}
+
 // GeneratePut puts a new UUIDv7 for the current time into a [16]byte.
 //
 // Example usage:
@@ -31,15 +53,43 @@ func GeneratePut(uuid *[16]byte) {
 		return
 	}
 
-	{
-		now := time.Now().UnixMilli()
+	GeneratePutAtUnixTimeMilli(uuid, time.Now().UnixMilli())
+}
 
-		uuid[0] = byte(now >> 40)
-		uuid[1] = byte(now >> 32)
-		uuid[2] = byte(now >> 24)
-		uuid[3] = byte(now >> 16)
-		uuid[4] = byte(now >>  8)
-		uuid[5] = byte(now      )
+// GeneratePutAtUnixTime puts a UUIDv7 for the provided seconds-resolution unix-time into a [16]byte.
+//
+// Example usage:
+//
+//	var uuid [16]byte
+//	
+//	uuidv7.GeneratePutAtUnixTime(&uuid, when)
+func GeneratePutAtUnixTime(uuid *[16]byte, sec int64) {
+	if nil == uuid {
+		return
+	}
+
+	GeneratePutAtUnixTimeMilli(uuid, 1_000 * sec)
+}
+
+// GeneratePutAtUnixTimeMilli puts a UUIDv7 for the provided milliseconds-resolution unix-time into a [16]byte.
+//
+// Example usage:
+//
+//	var uuid [16]byte
+//	
+//	uuidv7.GeneratePutAtUnixTime(&uuid, when)
+func GeneratePutAtUnixTimeMilli(uuid *[16]byte, msec int64) {
+	if nil == uuid {
+		return
+	}
+
+	{
+		uuid[0] = byte(msec >> 40)
+		uuid[1] = byte(msec >> 32)
+		uuid[2] = byte(msec >> 24)
+		uuid[3] = byte(msec >> 16)
+		uuid[4] = byte(msec >>  8)
+		uuid[5] = byte(msec      )
 	}
 
 	{
