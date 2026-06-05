@@ -164,6 +164,13 @@ const (
 	ErrNotUUIDv7     = erorr.Error("not UUIDv7") // not version 7 UUID
 )
 
+// ValidateString returns an error if a string is not a valid UUIDv7, else it returns nil (if it is a valid UUIDv7).
+//
+// Example usage:
+//
+//	var uuid string = "ed7ba470-8e54-465e-825c-99712043e01c"
+//	
+//	err := uuidv7.ValidateString(uuid)
 func ValidateString(str string) error {
 	if uuidStringLength != len(str) {
 		return ErrLengthWrong
