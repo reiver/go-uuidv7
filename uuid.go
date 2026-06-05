@@ -140,10 +140,10 @@ func IsString(str string) bool {
 }
 
 const (
-	ErrHyphenMissing   = erorr.Error("hypen missing")
-	ErrLengthWrong     = erorr.Error("length wrong")
-	ErrNotUUID         = erorr.Error("not UUID")
-	ErrNotVersion7UUID = erorr.Error("not version 7 UUID")
+	ErrHyphenMissing = erorr.Error("hypen missing")
+	ErrLengthWrong   = erorr.Error("length wrong")
+	ErrNotUUID       = erorr.Error("not UUID")
+	ErrNotUUIDv7     = erorr.Error("not UUIDv7") // not version 7 UUID
 )
 
 func ValidateString(str string) error {
@@ -175,10 +175,10 @@ func ValidateString(str string) error {
 	}
 
 	if '7' != str[14] {
-		return ErrNotVersion7UUID
+		return ErrNotUUIDv7
 	}
 	if '8' != str[19] && '9' != str[19] && 'A' != str[19] && 'B' != str[19] && 'a' != str[19] && 'b' != str[19] { // b10xx
-		return ErrNotVersion7UUID
+		return ErrNotUUIDv7
 	}
 
 	return nil

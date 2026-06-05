@@ -11,7 +11,7 @@ package uuidv7
 //	unixTimeStamp := uuidv7.UnixTimeMilli(uuid)
 func UnixTimeMilli(uuid [16]byte) (int64, error) {
 	if !Is(uuid) {
-		return 0, ErrNotVersion7UUID
+		return 0, ErrNotUUIDv7
 	}
 
 	return int64(

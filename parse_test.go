@@ -570,17 +570,17 @@ func TestParse_fail(t *testing.T) {
 		{
 			//                     v
 			String: "ED7BA470-8E54-465E-825C-99712043E01C",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "ed7ba470-8e54-465e-825c-99712043e01c",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "eD7bA470-8e54-465E-825c-99712043E01c",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 
 
@@ -588,190 +588,190 @@ func TestParse_fail(t *testing.T) {
 		{
 			//                     v
 			String: "00000000-0000-0000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-1000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-2000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-3000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-4000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-5000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-6000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 
 		{
 			//                     v
 			String: "00000000-0000-8000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-9000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-A000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-a000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-B000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-b000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-C000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-c000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-D000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-d000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-E000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-e000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-F000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                     v
 			String: "00000000-0000-f000-8000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 
 		{
 			//                          v
 			String: "00000000-0000-7000-0000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-1000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-2000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-3000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-4000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-5000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-6000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-7000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 
 		{
 			//                          v
 			String: "00000000-0000-7000-C000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-c000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-D000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-d000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-E000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-e000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-F000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 		{
 			//                          v
 			String: "00000000-0000-7000-f000-000000000000",
-			Expected: uuidv7.ErrNotVersion7UUID,
+			Expected: uuidv7.ErrNotUUIDv7,
 		},
 
 	}
