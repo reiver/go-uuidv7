@@ -118,6 +118,15 @@ func GeneratePutAtUnixTimeMilli(uuid *[16]byte, msec int64) {
 	}
 }
 
+// Is returns whether a [16]byte is a valid UUIDv7.
+//
+// Example usage:
+//
+//	var uuid [16]byte = uuidv7.MustParse("ed7ba470-8e54-465e-825c-99712043e01c")
+//	
+//	if uuidv7.Is(uuid) {
+//		// ...
+//	}
 func Is(uuid [16]byte) bool {
 	var m byte = (uuid[6] & 0xF0)
 
@@ -134,6 +143,15 @@ func Is(uuid [16]byte) bool {
 	return true
 }
 
+// IsString returns whether a string is a valid UUIDv7.
+//
+// Example usage:
+//
+//	var uuid string = "ed7ba470-8e54-465e-825c-99712043e01c"
+//	
+//	if uuidv7.IsString(uuid) {
+//		// ...
+//	}
 func IsString(str string) bool {
 	err := ValidateString(str)
 	return nil == err
