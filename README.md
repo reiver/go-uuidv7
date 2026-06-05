@@ -4,6 +4,25 @@ Package **uuidv7** implements **UUIDv7**, for the Go programming language.
 
 I.e., **UUID** version 7.
 
+## Example
+
+Here is an example of generating a new UUIDv7 for the current time:
+
+```golang
+import "github.com/reiver/go-uuidv7"
+
+uuid := uuidv7.Generate()
+```
+
+Here is an example of parsing a (potentialy) UUIDv7:
+
+```golang
+import "github.com/reiver/go-uuidv7"
+
+
+uuid, err := uuidv7.Parse(str)
+```
+
 ## Documention
 
 Online documentation, which includes examples, can be found at: http://godoc.org/github.com/reiver/go-uuidv7
