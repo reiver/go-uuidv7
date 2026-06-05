@@ -2,6 +2,8 @@ package uuidv7
 
 // String return the string version of a [16]byte UUID.
 //
+// Note that String does not check if the UUID is a valid version 7 UUID (UUIDv7) or not.
+//
 // Example usage:
 //
 //	uuid := uuidv7.String(uuidv7.Generate())
